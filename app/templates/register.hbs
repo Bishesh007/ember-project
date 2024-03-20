@@ -1,0 +1,77 @@
+<style>
+    .register-container {
+        max-width: 400px;
+        margin: 100px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+
+    .register-container h2 {
+        text-align: center;
+    }
+
+    .register-container form {
+        margin-top: 20px;
+    }
+
+    .register-container label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .register-container input[type="text"],
+    .register-container input[type="password"],
+    .register-container input[type="number"] {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .register-container button {
+        width: 100%;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .register-container button:hover {
+        background-color: #45a049;
+    }
+</style>
+<div class="register-container">
+    <h2>Register</h2>
+    <form {{on "submit" this.register}}>
+        <label for="studentName">Student Name:</label>
+        <Input @type="text" @value={{this.studentName}} class="form-control mb-3" placeholder="Student Name" />
+        <label for="email">Email:</label>
+        <Input @type="text" @value={{this.email}} class="form-control mb-3" placeholder="Email" />
+        <label for="password">Password:</label>
+        <Input @type="password" style="-webkit-text-security: disc" id="password" @value={{this.password}}
+            class="form-control mb-3" placeholder="Enter your password" />
+        <label for="class">Class:</label>
+        <Input @type="text" @value={{this.class}} class="form-control mb-3" placeholder="Class" />
+        <label for="rollNo">Roll No:</label>
+        <Input @type="text" @value={{this.rollNo}} class="form-control mb-3" placeholder="Roll No" />
+        <label for="section">Section:</label>
+        <Input @type="text" @value={{this.section}} class="form-control mb-3" placeholder="Section" />
+        <label for="age">Age:</label>
+        <Input @type="number" @value={{this.age}} class="form-control mb-3" placeholder="Age" />
+        <label for="address">Address:</label>
+        <Input @type="text" @value={{this.address}} class="form-control mb-3" placeholder="Address" />
+        <label for="contactNumber">Contact Number:</label>
+        <Input @type="text" @value={{this.contactNumber}} class="form-control mb-3" placeholder="Contact Number" />
+        <button type="submit">Register</button>
+        {{#if this.errorMessage}}
+        <div class="alert alert-danger">
+            {{this.errorMessage}}
+        </div>
+        {{/if}}
+    </form>
+</div>

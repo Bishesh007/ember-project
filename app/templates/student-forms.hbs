@@ -1,0 +1,72 @@
+  <style>
+  .form-container {
+    max-width: 400px;
+    margin: 0 auto; /* Center the form horizontally */
+  }
+
+  /* Apply styles to form labels */
+  .form-label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  /* Apply styles to form inputs */
+  .form-control {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+    font-size: 14px; /* You can adjust the font size as needed */
+  }
+
+  /* Apply styles to form button */
+  .form-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .form-button:hover {
+    background-color: #45a049;
+  }
+  </style>
+  <NavBar/>
+  <LinkTo @route="studentsList">Back</LinkTo>
+  <div class="form-container">
+    <h2>Enter Student Details</h2>
+    <form {{on "submit" this.addStudent}}>
+      <label class="form-label" for="studentName">
+        Student Name:
+        <Input type="text" id="studentName" @value={{this.studentName}} class="form-control" placeholder="StudentName"/> 
+      </label>
+      <label class="form-label" for="class">
+        Class:
+        <Input type="text" id="class" @value={{this.class}} class="form-control" placeholder="Class"/> 
+      </label>
+      <label class="form-label" for="rollNo">
+        Roll No:
+        <Input type="number" id="rollNo" @value={{this.rollNo}} class="form-control" placeholder="Roll No"/> 
+      </label>
+      <label class="form-label" for="section">
+        Section:
+        <Input type="text" id="section" @value={{this.section}} class="form-control" placeholder="Section"/> 
+      </label>
+      <label class="form-label" for="age">
+        Age:
+        <Input type="number" id="age" @value={{this.age}} class="form-control" placeholder="Age"/> 
+      </label>
+      <label class="form-label" for="address">
+        Address:
+        <Input type="text" id="address" @value={{this.address}} class="form-control" placeholder="Address"/> 
+      </label>
+      <label class="form-label" for="contactNumber">
+        Contact Number:
+      <Input @type="number" id="contactNumber" @value={{this.contactNumber}} class="form-control" placeholder="Contact Number"   pattern="[0-9]{0,10}"/>
+      </label>
+      <button type="submit" class="form-button">Add Student</button>
+    </form>
+  </div>

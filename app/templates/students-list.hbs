@@ -1,0 +1,39 @@
+{{page-title "StudentsList"}}
+<NavBar @model="Bishesh" />
+<div class="table-header">
+  <h2>List of Students</h2>
+  <div class="new-student-link">
+    <LinkTo @route="student-forms" class="button">Add Student</LinkTo>
+  </div>
+</div>
+<table class="student">  
+  <tr>  
+    <th>No</th>  
+    <th>Student Name</th>  
+    <th>class</th>  
+    <th>Roll No</th>  
+    <th>Section</th>
+    <th>Age</th>
+    <th>Address</th>
+    <th>Contact Number</th>
+    <th>Action</th>  
+  </tr>  
+  {{#each this.model as |Student|}}  
+   
+ <tr>  
+    <td>{{Student.id}}</td>  
+    <td>{{Student.studentName}}</td>  
+    <td>{{Student.class}}</td>  
+    <td>{{Student.rollNo}}</td>  
+    <td>{{Student.section}}</td>
+    <td>{{Student.age}}</td>
+    <td>{{Student.address}}</td>  
+    <td>{{Student.contactNumber}}</td>  
+    <td>
+        <LinkTo @route="studentDetail" @model= {{Student}}>View</LinkTo>
+        <LinkTo @route="student-edit" @model= {{Student}}>Edit</LinkTo>
+    </td>
+  </tr>        
+  {{/each}}       
+</table>
+{{outlet}}

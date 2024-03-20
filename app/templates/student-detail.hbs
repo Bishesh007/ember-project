@@ -1,0 +1,43 @@
+<NavBar/>
+<h2>Details of {{this.model.studentName}}</h2>
+<div class="table-container">
+    <table class="table">
+        <thead>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Device ID</td>
+                <td>{{this.model.id}}</td>
+            </tr>
+            <tr>
+                <td>Full Name</td>
+                <td>{{this.model.studentName}}</td>
+            </tr>
+            <tr>
+                <td>Roll No</td>
+                <td>{{this.model.rollNo}}</td>
+            </tr>
+            <tr>
+                <td>Class</td>
+                <td>{{this.model.class}}</td>
+            </tr>
+            <tr>
+                <td>Section</td>
+                <td>{{this.model.section}}</td>
+            </tr>
+            <tr>
+                <td>Age</td>
+                <td>{{this.model.age}}</td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td>{{this.model.address}}</td>
+            </tr>
+            <tr>
+                <td>Contact Number</td>
+                <td>{{this.model.contactNumber}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{{outlet}}

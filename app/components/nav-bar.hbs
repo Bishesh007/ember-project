@@ -1,0 +1,84 @@
+<style>
+.navbar {
+  background-color: #f8f9fa;
+  padding: 10px 20px;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  width: 70px;
+  border-radius: 50%;
+}
+
+.brand-name {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.nav-links ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.nav-links ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.nav-links ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+}
+
+.user-section span {
+  margin-right: 10px;
+}
+
+.user-section button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.user-section button:hover {
+  background-color: #c82333;
+}
+</style>
+<nav class="navbar">
+  <div class="navbar-container">
+    <div class="logo">
+      <img src="logo.png" alt="Logo" class="logo-img">
+      <span class="brand-name">Tribhuvan University Coaching</span>
+    </div>
+    <div class="nav-links">
+      <ul>
+        <li><a href="#"><strong><span style="font-size: 20px;"><LinkTo @route="studentsList" class="button">Home</LinkTo></span></strong></a></li>
+        <li><a href="#"><strong><span style="font-size: 20px;"><LinkTo @route="student-forms" class="button">Student Form</LinkTo></span></strong></a></li>
+        <li><a href="#"><strong><span style="font-size: 20px;"><LinkTo @route="studentsList" class="button">About us</LinkTo></span></strong></a></li>
+      </ul>
+    </div>
+    <div class="user-section">
+      <span>Welcome, {{@model}}</span>
+      <button onclick="logout()" type="button">Logout</button>
+    </div>
+  </div>
+</nav>
