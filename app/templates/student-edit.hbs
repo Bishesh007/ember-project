@@ -41,7 +41,7 @@
   <form {{on "submit" this.editStudent}}>
     <label class="form-label" for="studentName">
       Student Name:
-      <Input type="text" id="studentName" @value={{this.model.studentName}} class="form-control" placeholder="StudentName"/> 
+      <Input type="text" id="studentName" @value={{this.model.userName}} class="form-control" placeholder="StudentName"/> 
     </label>
     <label class="form-label" for="class">
       Class:
@@ -65,7 +65,7 @@
     </label>
     <label class="form-label" for="contactNumber">
       Contact Number:
-      <Input type="number" id="contactNumber" @value={{this.model.contactNumber}} class="form-control" placeholder="Contact Number"/> 
+      <Input type="number" id="contactNumber" @value={{this.model.phoneNumber}} class="form-control" placeholder="Contact Number"/> 
     </label>
     <button type="submit" class="form-button">Update Student Details</button>
   </form>

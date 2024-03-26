@@ -6,34 +6,40 @@
     <LinkTo @route="student-forms" class="button">Add Student</LinkTo>
   </div>
 </div>
-<table class="student">  
-  <tr>  
-    <th>No</th>  
-    <th>Student Name</th>  
-    <th>class</th>  
-    <th>Roll No</th>  
+<table class="student">
+  <tr>
+    <th>Student Name</th>
+    <th>class</th>
+    <th>Roll No</th>
     <th>Section</th>
     <th>Age</th>
     <th>Address</th>
     <th>Contact Number</th>
-    <th>Action</th>  
-  </tr>  
-  {{#each this.model as |Student|}}  
-   
- <tr>  
-    <td>{{Student.id}}</td>  
-    <td>{{Student.studentName}}</td>  
-    <td>{{Student.class}}</td>  
-    <td>{{Student.rollNo}}</td>  
+    <th>Action</th>
+  </tr>
+  {{#each this.model as |Student|}}
+
+  <tr>
+    <td>{{Student.userName}}</td>
+    <td>{{Student.class}}</td>
+    <td>{{Student.rollNo}}</td>
     <td>{{Student.section}}</td>
     <td>{{Student.age}}</td>
-    <td>{{Student.address}}</td>  
-    <td>{{Student.contactNumber}}</td>  
+    <td>{{Student.address}}</td>
+    <td>{{Student.phoneNumber}}</td>
     <td>
-        <LinkTo @route="studentDetail" @model= {{Student}}>View</LinkTo>
-        <LinkTo @route="student-edit" @model= {{Student}}>Edit</LinkTo>
+      <LinkTo @route="studentDetail" @model={{Student}}>
+        <span class="icon">
+          <i class="fas fa-eye"></i>
+        </span>
+      </LinkTo>
+      <LinkTo @route="student-edit" @model={{Student}}>
+        <span class="icon">
+          <i class="fas fa-edit"></i>
+        </span>
+      </LinkTo>
     </td>
-  </tr>        
-  {{/each}}       
+  </tr>
+  {{/each}}
 </table>
 {{outlet}}

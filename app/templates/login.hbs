@@ -3,59 +3,67 @@
   <form {{on "submit" this.login}}>
     <label for="username">Username:</label>
     {{!-- <input type="text" id="username" {{on "input" this.username}} /> --}}
-    <Input type="text"   id="email" @value={{this.username}} class="form-control mb-3" placeholder="Enter your user name"/> 
+    <Input type="text" id="email" @value={{this.username}} class="form-control mb-3"
+      placeholder="Enter your user name" />
     <label for="password">Password:</label>
     {{!-- <input type="password" id="password" {{on "input" this.setPassword}} /> --}}
-    <Input type="password"  style="-webkit-text-security: disc" id="password" @value={{this.password}} class="form-control mb-3" placeholder="Enter your password"/>
+    <Input type="password" style="-webkit-text-security: disc" id="password" @value={{this.password}}
+      class="form-control mb-3" placeholder="Enter your password" />
     <button type="submit">Login</button>
+    {{#if this.errorMessage}}
+    <div class="alert alert-danger">
+      {{this.errorMessage}}
+    </div>
+    {{/if}}
   </form>
 </div>
 <div class="mt-3">
-<p>Doesn't have an account yet?<LinkTo @route="register" class="btn btn-link mb-2"> Register </LinkTo></p>
+  <p>Doesn't have an account yet?<LinkTo @route="register" class="btn btn-link mb-2"> Register </LinkTo>
+  </p>
 </div>
 <style>
-    .login-container {
-  max-width: 400px;
-  margin: 100px auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f9f9f9;
-}
+  .login-container {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
 
-.login-container h2 {
-  text-align: center;
-}
+  .login-container h2 {
+    text-align: center;
+  }
 
-.login-container form {
-  margin-top: 20px;
-}
+  .login-container form {
+    margin-top: 20px;
+  }
 
-.login-container label {
-  display: block;
-  margin-bottom: 5px;
-}
+  .login-container label {
+    display: block;
+    margin-bottom: 5px;
+  }
 
-.login-container input[type="text"],
-.login-container input[type="password"] {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
+  .login-container input[type="text"],
+  .login-container input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
 
-.login-container button {
-  width: 100%;
-  padding: 10px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
+  .login-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
 
-.login-container button:hover {
-  background-color: #45a049;
-}
+  .login-container button:hover {
+    background-color: #45a049;
+  }
 </style>

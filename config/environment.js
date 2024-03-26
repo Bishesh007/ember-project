@@ -21,7 +21,7 @@ module.exports = function (environment) {
   };
 
   if (environment === 'development') {
-    ENV.apiUrl='https://localhost:7078';
+    ENV.apiUrl = 'https://localhost:7078';
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
@@ -30,7 +30,7 @@ module.exports = function (environment) {
   }
 
   if (environment === 'test') {
-    ENV.apiUrl='https://localhost:7078'; 
+    ENV.apiUrl = 'https://localhost:7078';
 
     // Testem prefers this...
     ENV.locationType = 'none';

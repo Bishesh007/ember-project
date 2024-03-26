@@ -4,6 +4,7 @@ import { inject as service } from '@ember/service';
 
 export default class StudentFormsController extends Controller {
   @service router;
+  @service api;
 
   studentName = '';
   class = '';
@@ -12,32 +13,26 @@ export default class StudentFormsController extends Controller {
   age = '';
   address = '';
   contactNumber = '';
+  email ='';
 
   @action
   async addStudent(event) {
     event.preventDefault();
     console.log('addStudent');
 
-    const formData = new FormData();
-    formData.append('studentName', this.studentName);
-    formData.append('class', this.class);
-    formData.append('rollNo', this.rollNo);
-    formData.append('section', this.section);
-    formData.append('age', this.age);
-    formData.append('address', this.address);
-    formData.append('contactNumber', this.contactNumber);
-    //const addedMovie = await this.api.addMovie(formData);
-    console.log(formData);
-
-    let newStudent = {
-      studentName: this.studentName,
+    let studentDetails = {
+      userName: this.studentName,
       class: this.class,
       rollNo: this.rollNo,
       section: this.section,
       age: this.age,
       address: this.address,
-      contactNumber: this.contactNumber,
+      phoneNumber: this.contactNumber,
+      email: this.email,
     };
+    const addStudent = await this.api.add(studentDetails);
+    console.log("Student Updated",addStudent.message);
+
     this.setProperties({
       studentName: '',
       class: '',
@@ -47,6 +42,9 @@ export default class StudentFormsController extends Controller {
       address: '',
       contactNumber: '',
     });
+
+    const result = await addStudent.json();
+    alert(result.message);
     await this.router.transitionTo('studentsList');
   }
 }
